@@ -1,0 +1,11 @@
+{
+   "aps" : {
+      "alert" : {
+         "title" : "Game Request",
+         "body" : "Bob wants to play poker"
+      },
+      "badge" : 0
+   },
+   "Simulator Target Bundle": "JairoChatTest"
+}
+
