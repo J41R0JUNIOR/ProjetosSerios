@@ -44,7 +44,8 @@ struct CheckeredMesh: Shape{
 }
 
 struct GraphicInMesh: Shape{
-    let divider = 1000.0
+    let divider = 1.0
+//    var  funcX: () -> Double
     
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath()
@@ -64,12 +65,8 @@ struct GraphicInMesh: Shape{
             let formattedX = (x - midWidth) + midWidth
            
             
-            let y = -(fX(x: x - midWidth, funcX: {x1 in 
-                return
-                /*(formattedX - midWidth) * sin(formattedX - midWidth)*/
-                (pow(x1, 3) - x1 + 2)/divider
-                
-            }) /*- midHeight*/)
+            let y = -(fX(x: x - midWidth, funcX: {x1 in
+                return (pow(x1, 2)) / divider}))
             
             let formattedY = midHeight + y
             
@@ -79,10 +76,10 @@ struct GraphicInMesh: Shape{
             if point.x >= minWidth && point.y >= minHeight && point.x <= maxWidth && point.y <= maxHeight{
                 path.move(to: point)
                 
-                point.y += 2
+                point.y += 1
                 path.addLine(to: point)
                 
-                point.y -= 4
+                point.y -= 2
                 path.addLine(to: point)
             }
         }

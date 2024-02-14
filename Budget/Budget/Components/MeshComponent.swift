@@ -13,9 +13,9 @@ struct MeshComponent: View {
     var body: some View {
         ZStack{
             CheckeredMesh().stroke(Color.black, style: .init(lineWidth: 3))
-            GraphicInMesh().stroke(Color.red, style: .init(lineWidth: 3))
+            GraphicInMesh().stroke(Color.red, style: .init(lineWidth: 1))
             
-        }.frame(width: l, height: l).border(.blue)
+        }.frame(width: l, height: l)/*.border(.blue)*/
     }
 }
 
