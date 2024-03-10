@@ -20,12 +20,12 @@ struct MeshComponent: View {
     
     var body: some View {
         ZStack{
-            CheckeredMesh().stroke(Color.black, style: .init(lineWidth: 3))
+//            CheckeredMesh().stroke(Color.black, style: .init(lineWidth: 3))
 //                        GraphicInMesh().stroke(Color.red, style: .init(lineWidth: 1))
             //
             
             
-            Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l).border(Color.blue)
+            Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l)/*.border(Color.blue)*/
             GraphicalPoints(array: points).stroke(Color.purple, style: .init(lineWidth: 5))
             
             
