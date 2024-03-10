@@ -114,13 +114,20 @@ struct Graphical: Shape {
         let maxHeight = rect.height
 
         let sortedArray = array.sorted { $0.x < $1.x }
+        let greatX = sortedArray.last?.x
+        let smallestX = sortedArray.first?.x
+        
+        print(greatX)
+        print(smallestX)
+        
         let path = UIBezierPath()
 
         for point in sortedArray.indices {
             var point = sortedArray[point]
-
+            
             point.x += midWidth
-            point.y = rect.height - (point.y + midHeight)
+            point.y = maxHeight - (point.y + midHeight)
+            
             
             if path.isEmpty {
                 path.move(to: point)

@@ -35,8 +35,8 @@ struct ContentView: View {
 //                }
 //                                Triangle()
 //                                Rectangle()
-                                                GraphicalComponent(value1: $viewModel.value1, value2: $viewModel.value2, value3: $viewModel.value3, h: $viewModel.h)
-                                Spacer()
+//                                                GraphicalComponent(value1: $viewModel.value1, value2: $viewModel.value2, value3: $viewModel.value3, h: $viewModel.h)
+//                                Spacer()
                                 MeshComponent()
             }.padding()
         }
