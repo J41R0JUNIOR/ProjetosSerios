@@ -104,8 +104,14 @@ struct Graphical: Shape {
    
 
     func path(in rect: CGRect) -> Path {
-        let midWidth = rect.width / 2
-        let midHeight = rect.height / 2
+        let minWidth = rect.minX
+        let minHeight = rect.minY
+        
+        let midWidth = rect.width/2
+        let midHeight = rect.height/2
+        
+        let maxWidth = rect.width
+        let maxHeight = rect.height
 
         let sortedArray = array.sorted { $0.x < $1.x }
         let path = UIBezierPath()
@@ -113,14 +119,12 @@ struct Graphical: Shape {
         for point in sortedArray.indices {
             var point = sortedArray[point]
 
+            point.x += midWidth
+            point.y = rect.height - (point.y + midHeight)
             
             if path.isEmpty {
-                point.x += midWidth
-                point.y = rect.height - (point.y + midHeight)
                 path.move(to: point)
             } else {
-                point.x += midWidth
-                point.y = rect.height - (point.y + midHeight)
                 path.addLine(to: point)
             }
         }
@@ -154,7 +158,6 @@ struct GraphicalPoints: Shape {
         return Path(path.cgPath)
     }
 }
-
 
 #Preview {
     ContentView()
