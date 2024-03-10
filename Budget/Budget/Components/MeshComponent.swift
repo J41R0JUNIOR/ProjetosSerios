@@ -30,7 +30,7 @@ struct MeshComponent: View {
             
 
            
-            Text(hehe ?? "CSV not found")
+//            Text(hehe ?? "CSV not found")
 
             
         }.frame(width: l, height: l)/*.border(.blue)*/

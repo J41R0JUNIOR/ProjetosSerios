@@ -145,14 +145,22 @@ struct Graphical: Shape {
     let array: [CGPoint]
 
     func path(in rect: CGRect) -> Path {
-     
+        let midWidth = rect.width / 2
+        let midHeight = rect.height / 2
+
         let sortedArray = array.sorted { $0.x < $1.x }
         let path = UIBezierPath()
 
-        for point in sortedArray {
+        for point in sortedArray.indices {
+            var point = sortedArray[point]
+
             if path.isEmpty {
+                point.x += midWidth
+                point.y = rect.height - (point.y + midHeight)
                 path.move(to: point)
             } else {
+                point.x += midWidth
+                point.y = rect.height - (point.y + midHeight)
                 path.addLine(to: point)
             }
         }
@@ -161,27 +169,28 @@ struct Graphical: Shape {
     }
 }
 
+struct GraphicalPoints: Shape {
+    let array: [CGPoint]
 
-
-struct GraphicalPoints: Shape{
-    let array : [CGPoint]
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath()
-        
-       
 
-        for pointInArray in array.indices{
+        for pointInArray in array.indices {
+            let midWidth = rect.width / 2
+            let midHeight = rect.height / 2
             var point = array[pointInArray]
-            
+
+            point.x += midWidth
+            point.y = rect.height - (point.y + midHeight)
             path.move(to: point)
-            
+
             point.y += 1
             path.addLine(to: point)
-            
+
             point.y -= 2
             path.addLine(to: point)
         }
-        
+
         return Path(path.cgPath)
     }
 }
