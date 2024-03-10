@@ -44,7 +44,7 @@ struct CheckeredMesh: Shape{
 }
 
 struct GraphicInMesh: Shape{
-    let divider = 1000
+    let divider = 10
     let a = UIScreen.main.bounds.width
 //    var  funcX: () -> Double
     
@@ -63,7 +63,7 @@ struct GraphicInMesh: Shape{
 
         for x in stride(from: minWidth, to: maxWidth , by: 0.1){
             
-            let formattedX = (x - midWidth) + midWidth
+            let formattedX = ((x - midWidth) + midWidth)
            
             
             let y = -(fX(x: x - midWidth)
@@ -72,7 +72,7 @@ struct GraphicInMesh: Shape{
             
             
             
-            let formattedY = midHeight + y
+            let formattedY = (midHeight + y) /*/ Double(divider)*/
             
            
             var point = CGPoint(x: formattedX, y: formattedY)
@@ -99,50 +99,9 @@ struct GraphicInMesh: Shape{
 
 
 
-
-
-
-
-
-
-
-
-
-
-//
-//struct Graphical: Shape{
-//    let array : [CGPoint]
-//    func path(in rect: CGRect) -> Path {
-//        let path = UIBezierPath()
-//        
-//        print(array)
-//
-//        for pointInArray in array.indices{
-//            var point = array[pointInArray]
-//            
-//            
-////            path.move(to: point)
-////            
-////            point.y += 1
-////            path.addLine(to: point)
-////            
-////            point.y -= 2
-////            path.addLine(to: point)
-//            if pointInArray < 1{
-//                path.move(to: point)
-//            }else{
-//                path.addLine(to: point)
-//            }
-//            
-//            
-//        }
-//        
-//        return Path(path.cgPath)
-//    }
-//}
-
 struct Graphical: Shape {
     let array: [CGPoint]
+   
 
     func path(in rect: CGRect) -> Path {
         let midWidth = rect.width / 2
@@ -154,6 +113,7 @@ struct Graphical: Shape {
         for point in sortedArray.indices {
             var point = sortedArray[point]
 
+            
             if path.isEmpty {
                 point.x += midWidth
                 point.y = rect.height - (point.y + midHeight)
