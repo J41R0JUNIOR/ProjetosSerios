@@ -44,7 +44,8 @@ struct CheckeredMesh: Shape{
 }
 
 struct GraphicInMesh: Shape{
-    let divider = 1.0
+    let divider = 1000
+    let a = UIScreen.main.bounds.width
 //    var  funcX: () -> Double
     
     func path(in rect: CGRect) -> Path {
@@ -60,13 +61,16 @@ struct GraphicInMesh: Shape{
         let maxHeight = rect.height
         
 
-        for x in stride(from: minWidth, to: maxWidth , by: 0.01){
+        for x in stride(from: minWidth, to: maxWidth , by: 0.1){
             
             let formattedX = (x - midWidth) + midWidth
            
             
-            let y = -(fX(x: x - midWidth, funcX: {x1 in
-                return (pow(x1, 2)) / divider}))
+            let y = -(fX(x: x - midWidth)
+                      
+            )
+            
+            
             
             let formattedY = midHeight + y
             
@@ -86,9 +90,99 @@ struct GraphicInMesh: Shape{
         return Path(path.cgPath)
     }
     
-    func fX(x: Double, funcX: (_ x1:Double)->Double) -> Double{
-        return funcX(x)
-//        return ((x * x) - x + 2)/divider
+    func fX(x: Double) -> Double{
+//        return funcX(x)
+        let value = pow(x, 3) - (2 * x)
+        return (value)/Double(divider)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//struct Graphical: Shape{
+//    let array : [CGPoint]
+//    func path(in rect: CGRect) -> Path {
+//        let path = UIBezierPath()
+//        
+//        print(array)
+//
+//        for pointInArray in array.indices{
+//            var point = array[pointInArray]
+//            
+//            
+////            path.move(to: point)
+////            
+////            point.y += 1
+////            path.addLine(to: point)
+////            
+////            point.y -= 2
+////            path.addLine(to: point)
+//            if pointInArray < 1{
+//                path.move(to: point)
+//            }else{
+//                path.addLine(to: point)
+//            }
+//            
+//            
+//        }
+//        
+//        return Path(path.cgPath)
+//    }
+//}
+
+struct Graphical: Shape {
+    let array: [CGPoint]
+
+    func path(in rect: CGRect) -> Path {
+     
+        let sortedArray = array.sorted { $0.x < $1.x }
+        let path = UIBezierPath()
+
+        for point in sortedArray {
+            if path.isEmpty {
+                path.move(to: point)
+            } else {
+                path.addLine(to: point)
+            }
+        }
+
+        return Path(path.cgPath)
+    }
+}
+
+
+
+struct GraphicalPoints: Shape{
+    let array : [CGPoint]
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath()
+        
+       
+
+        for pointInArray in array.indices{
+            var point = array[pointInArray]
+            
+            path.move(to: point)
+            
+            point.y += 1
+            path.addLine(to: point)
+            
+            point.y -= 2
+            path.addLine(to: point)
+        }
+        
+        return Path(path.cgPath)
     }
 }
 

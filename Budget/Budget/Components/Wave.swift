@@ -30,7 +30,6 @@ struct Wave:Shape {
         let waveLength = width / frequency
         
         for x in stride(from: 0, to: width , by: 1){
-//            print("seno de :\(x) é = \(sin(x))")
             let relativeX = x / waveLength
             
             let distanceFromMidWidth = x - midWidth
@@ -41,7 +40,6 @@ struct Wave:Shape {
             let y = parabola * strength * sine + midHeight
             
             let point = CGPoint(x: x, y: y)
-//            print("\(x), \(y)")
             
             if x == 0{
                 path.move(to: point)

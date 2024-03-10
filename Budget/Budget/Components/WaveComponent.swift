@@ -24,6 +24,8 @@ struct WaveComponent: View {
                     .offset(y: CGFloat(i) * 15)
                     
             }
+//            Wave(strength: self.strength, frequency: self.frequency, phase: self.phase)
+//                .stroke(Color.black, lineWidth: 5)
         }.onAppear(perform: {
             withAnimation(Animation.linear(duration: speed).repeatForever(autoreverses: false)) {
                 phase = .pi * 2

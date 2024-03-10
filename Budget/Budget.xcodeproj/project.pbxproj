@@ -14,6 +14,7 @@
 		B30381582B4E3255008B951D /* BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381572B4E3255008B951D /* BudgetTests.swift */; };
 		B30381622B4E3255008B951D /* BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381612B4E3255008B951D /* BudgetUITests.swift */; };
 		B30381642B4E3255008B951D /* BudgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381632B4E3255008B951D /* BudgetUITestsLaunchTests.swift */; };
+		B33D9FF92B8D2E32007879BF /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33D9FF82B8D2E32007879BF /* Triangle.swift */; };
 		B382C3482B7B16AA00495148 /* CheckeredMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382C3472B7B16AA00495148 /* CheckeredMesh.swift */; };
 		B382C34A2B7B200D00495148 /* MeshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382C3492B7B200D00495148 /* MeshComponent.swift */; };
 		B3877ACB2B79A47E009EAE94 /* WaveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3877ACA2B79A47E009EAE94 /* WaveComponent.swift */; };
@@ -21,6 +22,7 @@
 		B387E19A2B571DD500FA067B /* CustomCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387E1992B571DD500FA067B /* CustomCircle.swift */; };
 		B387E1A02B5728AA00FA067B /* ContentViewVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387E19F2B5728AA00FA067B /* ContentViewVm.swift */; };
 		B387E1A22B57406500FA067B /* GraphicalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B387E1A12B57406500FA067B /* GraphicalComponent.swift */; };
+		B3A65DD82B9CC60B0055B12A /* oloko.csv in Resources */ = {isa = PBXBuildFile; fileRef = B3A65DD72B9CC60B0055B12A /* oloko.csv */; };
 		B3D45E3B2B717FA400D0CCDD /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D45E3A2B717FA400D0CCDD /* Wave.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,7 @@
 		B303815D2B4E3255008B951D /* BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30381612B4E3255008B951D /* BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITests.swift; sourceTree = "<group>"; };
 		B30381632B4E3255008B951D /* BudgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B33D9FF82B8D2E32007879BF /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		B382C3472B7B16AA00495148 /* CheckeredMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckeredMesh.swift; sourceTree = "<group>"; };
 		B382C3492B7B200D00495148 /* MeshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshComponent.swift; sourceTree = "<group>"; };
 		B3877ACA2B79A47E009EAE94 /* WaveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveComponent.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		B387E1992B571DD500FA067B /* CustomCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircle.swift; sourceTree = "<group>"; };
 		B387E19F2B5728AA00FA067B /* ContentViewVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewVm.swift; sourceTree = "<group>"; };
 		B387E1A12B57406500FA067B /* GraphicalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicalComponent.swift; sourceTree = "<group>"; };
+		B3A65DD72B9CC60B0055B12A /* oloko.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oloko.csv; sourceTree = "<group>"; };
 		B3D45E3A2B717FA400D0CCDD /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,12 +151,14 @@
 			isa = PBXGroup;
 			children = (
 				B382C3472B7B16AA00495148 /* CheckeredMesh.swift */,
+				B3A65DD72B9CC60B0055B12A /* oloko.csv */,
 				B382C3492B7B200D00495148 /* MeshComponent.swift */,
 				B387E1A12B57406500FA067B /* GraphicalComponent.swift */,
 				B387E1962B57158400FA067B /* CustomRectangle.swift */,
 				B387E1992B571DD500FA067B /* CustomCircle.swift */,
 				B3877ACA2B79A47E009EAE94 /* WaveComponent.swift */,
 				B3D45E3A2B717FA400D0CCDD /* Wave.swift */,
+				B33D9FF82B8D2E32007879BF /* Triangle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A65DD82B9CC60B0055B12A /* oloko.csv in Resources */,
 				B303814E2B4E3255008B951D /* Preview Assets.xcassets in Resources */,
 				B303814B2B4E3255008B951D /* Assets.xcassets in Resources */,
 			);
@@ -320,6 +327,7 @@
 				B3D45E3B2B717FA400D0CCDD /* Wave.swift in Sources */,
 				B387E19A2B571DD500FA067B /* CustomCircle.swift in Sources */,
 				B3877ACB2B79A47E009EAE94 /* WaveComponent.swift in Sources */,
+				B33D9FF92B8D2E32007879BF /* Triangle.swift in Sources */,
 				B30381472B4E3253008B951D /* BudgetApp.swift in Sources */,
 				B387E1A02B5728AA00FA067B /* ContentViewVm.swift in Sources */,
 				B387E1A22B57406500FA067B /* GraphicalComponent.swift in Sources */,
@@ -494,6 +502,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +532,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
