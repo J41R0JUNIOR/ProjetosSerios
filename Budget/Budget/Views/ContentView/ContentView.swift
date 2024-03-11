@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
-                                    WaveComponent(frequency: $viewModel.frequency, strength: $viewModel.strength, phase: $viewModel.phase, speed: $viewModel.speed, min: viewModel.min, max: viewModel.max)
+//                                    WaveComponent(frequency: $viewModel.frequency, strength: $viewModel.strength, phase: $viewModel.phase, speed: $viewModel.speed, min: viewModel.min, max: viewModel.max)
             VStack{
 //                NavigationView {
 //                    

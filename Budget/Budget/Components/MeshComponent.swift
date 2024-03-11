@@ -9,7 +9,7 @@ import SwiftUI
 import CoreGraphics
 
 struct MeshComponent: View {
-    let l:CGFloat = 350
+    let l:CGFloat = 300
     
     @State var csvFile : [(Double, Double)] = []
     
@@ -44,7 +44,7 @@ struct MeshComponent: View {
         do {
             if let path = Bundle.main.path(forResource: "oloko", ofType: "csv") {
                 let content = try String(contentsOfFile: path)
-                hehe = content
+//                hehe = content
                 points = convertStringToCGPoints(content)
             } else {
                 print("File not found: oloko")

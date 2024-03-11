@@ -113,27 +113,30 @@ struct Graphical: Shape {
         let maxWidth = rect.width
         let maxHeight = rect.height
 
-        let sortedArray = array.sorted { $0.x < $1.x }
-        let greatX = sortedArray.last?.x
-        let smallestX = sortedArray.first?.x
+        let sortedArrayX = array.sorted { $0.x < $1.x }
+        let greatX = sortedArrayX.last?.x
+        let smallestX = sortedArrayX.first?.x
         
-        print(greatX)
-        print(smallestX)
+        let sortedArrayY = array.sorted { $0.y < $1.y }
+        let greatY = sortedArrayY.last?.y
+        let smallestY = sortedArrayY.first?.y
+        
+        print("x g",greatX)
+        print("x s",smallestX)
+        
+        print("y g",greatY)
+        print("y s",smallestY)
+        
         
         let path = UIBezierPath()
 
-        for point in sortedArray.indices {
-            var point = sortedArray[point]
-            
-//            x=a+t×(b−a)
-            
-//            let xAB = (point.x + 1 * (Double(greatX ?? 10) - Double(smallestX ?? 10))) - midWidth
-            let constant = 20
-            point.x = ((point.x  / (midWidth / CGFloat(array.count))) * 2) + midWidth
-//            point.x += midWidth
-            point.y = maxHeight - (point.y + midHeight)
-            
-            
+        for point in sortedArrayX.indices {
+            var point = sortedArrayX[point]
+
+            point.x = CGFloat(point.x - (smallestX ?? 1)) / ((greatX ?? 1) - (smallestX ?? 1)) * maxWidth
+         
+            point.y = (-(point.y - (smallestY ?? 1)) / ((greatY ?? 1) - (smallestY ?? 1)) * maxHeight) + maxHeight
+
             if path.isEmpty {
                 path.move(to: point)
             } else {
@@ -154,10 +157,22 @@ struct GraphicalPoints: Shape {
         for pointInArray in array.indices {
             let midWidth = rect.width / 2
             let midHeight = rect.height / 2
+            let maxWidth = rect.width
+            let maxHeight = rect.height
+            
             var point = array[pointInArray]
+            let sortedArrayX = array.sorted { $0.x < $1.x }
+            let greatX = sortedArrayX.last?.x
+            let smallestX = sortedArrayX.first?.x
+            
+            let sortedArrayY = array.sorted { $0.y < $1.y }
+            let greatY = sortedArrayY.last?.y
+            let smallestY = sortedArrayY.first?.y
 
-            point.x += midWidth
-            point.y = rect.height - (point.y + midHeight)
+            point.x = CGFloat(point.x - (smallestX ?? 1)) / ((greatX ?? 1) - (smallestX ?? 1)) * maxWidth
+         
+            point.y = (-(point.y - (smallestY ?? 1)) / ((greatY ?? 1) - (smallestY ?? 1)) * maxHeight) + maxHeight
+            
             path.move(to: point)
 
             point.y += 1
