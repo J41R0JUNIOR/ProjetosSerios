@@ -9,7 +9,7 @@ import SwiftUI
 import CoreGraphics
 
 struct MeshComponent: View {
-    let l:CGFloat = 300
+    let l:CGFloat = 350
     
     @State var csvFile : [(Double, Double)] = []
     
@@ -25,7 +25,7 @@ struct MeshComponent: View {
             //
             
             
-            Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l)/*.border(Color.blue)*/
+            Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l).border(Color.blue)
             GraphicalPoints(array: points).stroke(Color.purple, style: .init(lineWidth: 5))
             
             

@@ -125,7 +125,12 @@ struct Graphical: Shape {
         for point in sortedArray.indices {
             var point = sortedArray[point]
             
-            point.x += midWidth
+//            x=a+t×(b−a)
+            
+//            let xAB = (point.x + 1 * (Double(greatX ?? 10) - Double(smallestX ?? 10))) - midWidth
+            let constant = 20
+            point.x = ((point.x  / (midWidth / CGFloat(array.count))) * 2) + midWidth
+//            point.x += midWidth
             point.y = maxHeight - (point.y + midHeight)
             
             
