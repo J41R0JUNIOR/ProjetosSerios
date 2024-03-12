@@ -102,14 +102,7 @@ struct GraphicInMesh: Shape{
 struct Graphical: Shape {
     let array: [CGPoint]
    
-
     func path(in rect: CGRect) -> Path {
-        let minWidth = rect.minX
-        let minHeight = rect.minY
-        
-        let midWidth = rect.width/2
-        let midHeight = rect.height/2
-        
         let maxWidth = rect.width
         let maxHeight = rect.height
 
@@ -120,14 +113,6 @@ struct Graphical: Shape {
         let sortedArrayY = array.sorted { $0.y < $1.y }
         let greatY = sortedArrayY.last?.y
         let smallestY = sortedArrayY.first?.y
-        
-        print("x g",greatX)
-        print("x s",smallestX)
-        
-        print("y g",greatY)
-        print("y s",smallestY)
-        
-        
         let path = UIBezierPath()
 
         for point in sortedArrayX.indices {
@@ -155,8 +140,6 @@ struct GraphicalPoints: Shape {
         let path = UIBezierPath()
 
         for pointInArray in array.indices {
-            let midWidth = rect.width / 2
-            let midHeight = rect.height / 2
             let maxWidth = rect.width
             let maxHeight = rect.height
             

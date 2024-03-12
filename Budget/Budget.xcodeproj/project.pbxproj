@@ -14,6 +14,7 @@
 		B30381582B4E3255008B951D /* BudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381572B4E3255008B951D /* BudgetTests.swift */; };
 		B30381622B4E3255008B951D /* BudgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381612B4E3255008B951D /* BudgetUITests.swift */; };
 		B30381642B4E3255008B951D /* BudgetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30381632B4E3255008B951D /* BudgetUITestsLaunchTests.swift */; };
+		B304AF132B9FD18400C2E83D /* testes.csv in Resources */ = {isa = PBXBuildFile; fileRef = B304AF122B9FD18400C2E83D /* testes.csv */; };
 		B33D9FF92B8D2E32007879BF /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33D9FF82B8D2E32007879BF /* Triangle.swift */; };
 		B382C3482B7B16AA00495148 /* CheckeredMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382C3472B7B16AA00495148 /* CheckeredMesh.swift */; };
 		B382C34A2B7B200D00495148 /* MeshComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382C3492B7B200D00495148 /* MeshComponent.swift */; };
@@ -54,6 +55,7 @@
 		B303815D2B4E3255008B951D /* BudgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30381612B4E3255008B951D /* BudgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITests.swift; sourceTree = "<group>"; };
 		B30381632B4E3255008B951D /* BudgetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B304AF122B9FD18400C2E83D /* testes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testes.csv; sourceTree = "<group>"; };
 		B33D9FF82B8D2E32007879BF /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		B382C3472B7B16AA00495148 /* CheckeredMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckeredMesh.swift; sourceTree = "<group>"; };
 		B382C3492B7B200D00495148 /* MeshComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshComponent.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				B382C3472B7B16AA00495148 /* CheckeredMesh.swift */,
+				B304AF122B9FD18400C2E83D /* testes.csv */,
 				B3A65DD72B9CC60B0055B12A /* oloko.csv */,
 				B382C3492B7B200D00495148 /* MeshComponent.swift */,
 				B387E1A12B57406500FA067B /* GraphicalComponent.swift */,
@@ -296,6 +299,7 @@
 				B3A65DD82B9CC60B0055B12A /* oloko.csv in Resources */,
 				B303814E2B4E3255008B951D /* Preview Assets.xcassets in Resources */,
 				B303814B2B4E3255008B951D /* Assets.xcassets in Resources */,
+				B304AF132B9FD18400C2E83D /* testes.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

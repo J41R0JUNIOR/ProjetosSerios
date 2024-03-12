@@ -9,14 +9,13 @@ import SwiftUI
 import CoreGraphics
 
 struct MeshComponent: View {
-    let l:CGFloat = 300
+    let l:CGFloat = 350
     
     @State var csvFile : [(Double, Double)] = []
     
     @State var hehe: String?
     
     @State var points: [CGPoint] = []
-    @State var p = [CGPoint(x: 70, y: 23), CGPoint(x: 3, y: 34)]
     
     var body: some View {
         ZStack{

@@ -28,6 +28,12 @@ struct ContentView: View {
 //                                .gridCellColumns(2)
 //                            Color.purple
 //                        }
+//                        GridRow {
+//                            Color.blue
+//                                .gridCellColumns(1)
+//                            Color.red
+//                                .gridCellColumns(2)
+//                        }
 //                        
 //                    }.frame(width: 400, height: 400)
 //                    

@@ -28,3 +28,7 @@ extension ContentView{
         var speed = 2.0
     }
 }
+
+#Preview(body: {
+    ContentView()
+})
