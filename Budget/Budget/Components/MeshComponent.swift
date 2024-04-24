@@ -9,7 +9,7 @@ import SwiftUI
 import CoreGraphics
 
 struct MeshComponent: View {
-    let l:CGFloat = 350
+    let l:CGFloat = 200
     
     @State var csvFile : [(Double, Double)] = []
     
@@ -21,11 +21,12 @@ struct MeshComponent: View {
         ZStack{
 //            CheckeredMesh().stroke(Color.black, style: .init(lineWidth: 3))
 //                        GraphicInMesh().stroke(Color.red, style: .init(lineWidth: 1))
-            //
+         
+                Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l).border(Color.blue)
+                            GraphicalPoints(array: points).stroke(Color.purple, style: .init(lineWidth: 5))
             
+                
             
-            Graphical(array: points).stroke(Color.green, style: .init(lineWidth: 2)).frame(width: l, height: l).border(Color.blue)
-            GraphicalPoints(array: points).stroke(Color.purple, style: .init(lineWidth: 5))
             
             
             
@@ -37,6 +38,7 @@ struct MeshComponent: View {
                readCSV()
                 //                }
             })
+         
     }
     
     func readCSV(){

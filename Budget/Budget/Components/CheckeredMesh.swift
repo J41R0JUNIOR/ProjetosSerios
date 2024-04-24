@@ -44,7 +44,7 @@ struct CheckeredMesh: Shape{
 }
 
 struct GraphicInMesh: Shape{
-    let divider = 10
+    let divider = 100
     let a = UIScreen.main.bounds.width
 //    var  funcX: () -> Double
     
@@ -66,9 +66,7 @@ struct GraphicInMesh: Shape{
             let formattedX = ((x - midWidth) + midWidth)
            
             
-            let y = -(fX(x: x - midWidth)
-                      
-            )
+            let y = -(fX(x: x - midWidth))
             
             
             
@@ -92,7 +90,8 @@ struct GraphicInMesh: Shape{
     
     func fX(x: Double) -> Double{
 //        return funcX(x)
-        let value = pow(x, 3) - (2 * x)
+//        let value = pow(x, 3) - (2 * x)
+        let value = sin(x)
         return (value)/Double(divider)
     }
 }

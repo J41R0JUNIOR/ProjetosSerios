@@ -20,7 +20,7 @@ struct WaveComponent: View {
         ZStack{
             ForEach(0..<6){ i in
                 Wave(strength: self.strength, frequency: self.frequency, phase: self.phase)
-                    .stroke(Color.black.opacity(Double(i) / 25), lineWidth: 5)
+                    .stroke(Color.blue.opacity(Double(i) / 25), lineWidth: 5)
                     .offset(y: CGFloat(i) * 15)
                     
             }

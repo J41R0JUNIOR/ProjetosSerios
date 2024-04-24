@@ -16,7 +16,7 @@ extension ContentView{
         var value2: Double = 0
         var value3: Double = 0
             
-        var h:CGFloat = 200
+        var h:CGFloat = 300
         
         
         var frequency: Double = 30
