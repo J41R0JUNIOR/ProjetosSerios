@@ -13,6 +13,8 @@ struct QueryView: View {
     @Bindable var model = QueryViewVM()
     @Query(sort: [SortDescriptor(\Destination.priority, order: .reverse)]) var destinations: [Destination]
     
+    @State var dataManager: DataManager?
+    
     
 
         
@@ -34,7 +36,7 @@ struct QueryView: View {
                         }
                     }
                 }.onDelete(perform: { indexSet in
-                    deleteIndex(indexSet)
+                    dataManager?.DeleteDestination(indexSet: indexSet, destinations: destinations)
                 })
                 .foregroundStyle(Color.white)
                 .listRowBackground(Color.black)
@@ -42,8 +44,16 @@ struct QueryView: View {
             .scrollContentBackground(.hidden)
             
         }
+        .onAppear(perform: {
+            dataManager = DataManager(modelContext: modelContext)
+        })
         .toolbar(content: {
-            Button("add", systemImage: "plus", action: addDestination)
+         
+            Button{
+                dataManager?.addDestination()
+            }label: {
+                Image(systemName: "plus")
+            }
         })
         
     }
@@ -61,18 +71,18 @@ struct QueryView: View {
     
     
 
-    func deleteIndex(_ indexSet: IndexSet){
-        for index in indexSet{
-            let destination = destinations[index]
-            modelContext.delete(destination)
-        }
-    }
-    
-    func addDestination(){
-        let destination = Destination()
-        modelContext.insert(destination)
-//        path = [destination]
-    }
+//    func deleteIndex(_ indexSet: IndexSet){
+//        for index in indexSet{
+//            let destination = destinations[index]
+//            modelContext.delete(destination)
+//        }
+//    }
+//    
+//    func addDestination(){
+//        let destination = Destination()
+//        modelContext.insert(destination)
+////        path = [destination]
+//    }
 }
 
 
@@ -80,4 +90,5 @@ struct QueryView: View {
     let modelContent: ModelContainer = .appContainer
     
     return QueryView(sort: SortDescriptor(\Destination.name), searchString: "").modelContainer(modelContent)
+    
 }

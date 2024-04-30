@@ -1,31 +1,30 @@
 //
-//  Root1NavigationLinkValues.swift
-//  EnumNavigator
+//  EnumCoordinator.swift
+//  EnumNavigatorAndSwiftData
 //
-//  Created by Jairo Júnior on 25/04/24.
+//  Created by Jairo Júnior on 29/04/24.
 //
 
 import SwiftUI
 
+enum HomeRootNavigator: View{
 
-enum Root1NavigationLinkValues: View{
-
-    case destination1
-    case destination2(title: String, lista: Binding<[String]>)
+    case home
+    case setting
     
     var body: some View {
         
         switch self {
-        case .destination1:
-            Destination1View()
+        case .home:
+            HomeView()
             
-        case .destination2(let title, let lista):
-            Destination2View(title: title, lista: lista)
+        case .setting:
+            SettingView()
         }
     }
 }
 
-extension Root1NavigationLinkValues: Equatable, Hashable{
+extension HomeRootNavigator: Equatable, Hashable{
 
     func hash(into hasher: inout Hasher) {
         
@@ -38,7 +37,7 @@ extension Root1NavigationLinkValues: Equatable, Hashable{
         }
     }
     
-    static func == (lhs: Root1NavigationLinkValues, rhs: Root1NavigationLinkValues) -> Bool {
+    static func == (lhs: HomeRootNavigator, rhs: HomeRootNavigator) -> Bool {
 
         switch (lhs, rhs){
         case (.destination1, .destination1):

@@ -17,6 +17,9 @@ struct Destination2View: View {
                 ForEach(lista, id: \.self){ element in
                     Text(element)
                 }
+                .onDelete(perform: { indexSet in
+                    lista.remove(atOffsets: indexSet)
+                })
             }
             
         }.navigationTitle("Destination2View")

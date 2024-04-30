@@ -11,11 +11,13 @@ import SwiftData
 struct EditDetinationView: View {
     @Bindable var destination: Destination
     @Environment(\.modelContext) var modelContext
+    @State var dataManager: DataManager?
 
     
     @State var newSightName = ""
     
     var body: some View {
+        VStack{
         Form{
             TextField("Name", text: $destination.name)
             TextField("Details", text: $destination.details, axis: .vertical)
@@ -32,8 +34,11 @@ struct EditDetinationView: View {
             }
             HStack{
                 TextField("Name of Sight", text: $newSightName)
-                    .onSubmit() {addSight()}
-                Button("Add", action: addSight)
+                    .onSubmit() {dataManager?.addSight(newSightName: newSightName, destination: destination)}
+                
+                Button("Add") {
+                    dataManager?.addSight(newSightName: newSightName, destination: destination)
+                }
             }
             Section {
                 if let wrappedSight = destination.sights{
@@ -41,32 +46,16 @@ struct EditDetinationView: View {
                         Text(sight.name)
                     }
                     .onDelete(perform: { indexSet in
-                        deleteSight(indexSet)
+                        dataManager?.deleteSight(indexSet: indexSet, destination: destination)
                     })
                 }
             }
-            
         }
+        }.onAppear(perform: {
+            dataManager = DataManager(modelContext: modelContext)
+        })
         .navigationTitle("Edit Destination")
     }
-    
-    func addSight(){
-        guard newSightName.isEmpty == false else { return }
-        withAnimation {
-            let sight = Sight(name: newSightName)
-            destination.sights?.append(sight)
-            newSightName = ""
-        }
-    }
-    
-    func deleteSight(_ indexSet: IndexSet){
-        for index in indexSet{
-            if let sight = destination.sights?[index]{
-                modelContext.delete(sight)
-            }
-        }
-    }
-    
 }
 
 #Preview {

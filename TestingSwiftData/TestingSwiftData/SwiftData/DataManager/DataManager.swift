@@ -28,14 +28,39 @@ class DataManager{
 //        }
 //    }
     
+
+    
     func addDestination(){
         let destination = Destination()
         modelContext.insert(destination)
 //        path = [destination]
     }
     
+    func addDestination(text: String){
+        let sample = Destination(name: text)
+        modelContext.insert(sample)
+    }
     
+    func DeleteDestination(indexSet: IndexSet, destinations: [Destination]){
+        for index in indexSet{
+            let destination = destinations[index]
+            modelContext.delete(destination)
+        }
+    }
     
+    func addSight(newSightName: String, destination: Destination){
+        guard newSightName.isEmpty == false else { return }
+        
+        let sight = Sight(name: newSightName)
+        destination.sights?.append(sight)
+    }
     
+    func deleteSight(indexSet: IndexSet, destination: Destination){
+        for index in indexSet{
+            if let sight = destination.sights?[index]{
+                modelContext.delete(sight)
+            }
+        }
+    }
 }
 
