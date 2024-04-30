@@ -33,6 +33,11 @@ class DataManager{
         modelContext.insert(groupOfMessage)
     }
     
+    func addGroup(name: String){
+        let groupOfMessage = GroupOfMessages(name: name)
+        modelContext.insert(groupOfMessage)
+    }
+    
     func deleteGroup(indexSet: IndexSet, groupOfMessages: [GroupOfMessages]){
         for index in indexSet{
             let destination = groupOfMessages[index]

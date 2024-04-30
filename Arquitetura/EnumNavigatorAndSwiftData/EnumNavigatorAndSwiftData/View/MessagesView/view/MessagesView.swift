@@ -12,19 +12,37 @@ struct MessagesView: View {
     @Environment(\.modelContext) var modelContext
     @State var dataManager: DataManager?
     @Binding var group:GroupOfMessages
+    @State var message = ""
     
     var body: some View {
         VStack{
-            List(group.messages ?? [MessagesInGroup()]){message in
-                Text(message.text)
+            List{
+                ForEach(group.messages ?? [MessagesInGroup()]){message in
+                    Text(message.text)
+                }
+                .foregroundStyle(Color.white)
+                .listRowBackground(Color.black)
             }
+            .scrollContentBackground(.hidden)
             
-            Button("add"){
-                dataManager?.addMessage(newMessage: "uma", groups: group)
-            }
-        }.onAppear{
+            HStack{
+                TextField("Digitar mensagem", text: $message)
+                    .textFieldStyle(.roundedBorder)
+                
+                Button(action: {
+                    dataManager?.addMessage(newMessage: message, groups: group)
+                    message = ""
+                }, label: {
+                    Image(systemName: "paperplane.circle.fill")
+
+                })
+            }  .padding()
+        }
+      
+        .onAppear{
             dataManager = DataManager(modelContext: modelContext)
         }
+        .navigationTitle(group.name)
     }
 }
 

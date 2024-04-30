@@ -23,6 +23,7 @@
 		B3224EF92BE083F900835E35 /* HomeRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EF82BE083F900835E35 /* HomeRootCoordinator.swift */; };
 		B3224EFD2BE0856F00835E35 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EFC2BE0856F00835E35 /* MessagesView.swift */; };
 		B3224EFF2BE1121200835E35 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EFE2BE1121200835E35 /* View+.swift */; };
+		B3224F012BE1925500835E35 /* HomeViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224F002BE1925500835E35 /* HomeViewM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		B3224EF82BE083F900835E35 /* HomeRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootCoordinator.swift; sourceTree = "<group>"; };
 		B3224EFC2BE0856F00835E35 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		B3224EFE2BE1121200835E35 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		B3224F002BE1925500835E35 /* HomeViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 		B3224EEB2BE0656600835E35 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				B3224F002BE1925500835E35 /* HomeViewM.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				B3224EFD2BE0856F00835E35 /* MessagesView.swift in Sources */,
 				B3224EE62BE063CC00835E35 /* ModelContainerExtension.swift in Sources */,
 				B3224EF42BE07E9800835E35 /* DataManager.swift in Sources */,
+				B3224F012BE1925500835E35 /* HomeViewM.swift in Sources */,
 				B3224EEF2BE0657E00835E35 /* HomeView.swift in Sources */,
 				B3224EB32BE062B400835E35 /* ContentView.swift in Sources */,
 				B3224EFF2BE1121200835E35 /* View+.swift in Sources */,
@@ -608,8 +612,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,8 +641,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
