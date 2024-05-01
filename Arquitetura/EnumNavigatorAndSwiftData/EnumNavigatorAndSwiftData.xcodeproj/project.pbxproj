@@ -20,10 +20,11 @@
 		B3224EE92BE0650C00835E35 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EE82BE0650C00835E35 /* SettingView.swift */; };
 		B3224EEF2BE0657E00835E35 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EEE2BE0657E00835E35 /* HomeView.swift */; };
 		B3224EF42BE07E9800835E35 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EF32BE07E9800835E35 /* DataManager.swift */; };
-		B3224EF92BE083F900835E35 /* HomeRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EF82BE083F900835E35 /* HomeRootCoordinator.swift */; };
+		B3224EF92BE083F900835E35 /* NavigationHomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EF82BE083F900835E35 /* NavigationHomeViewCoordinator.swift */; };
 		B3224EFD2BE0856F00835E35 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EFC2BE0856F00835E35 /* MessagesView.swift */; };
 		B3224EFF2BE1121200835E35 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EFE2BE1121200835E35 /* View+.swift */; };
 		B3224F012BE1925500835E35 /* HomeViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224F002BE1925500835E35 /* HomeViewM.swift */; };
+		B3224F032BE2AF3800835E35 /* NavigationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224F022BE2AF3800835E35 /* NavigationModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +61,11 @@
 		B3224EE82BE0650C00835E35 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		B3224EEE2BE0657E00835E35 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B3224EF32BE07E9800835E35 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		B3224EF82BE083F900835E35 /* HomeRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootCoordinator.swift; sourceTree = "<group>"; };
+		B3224EF82BE083F900835E35 /* NavigationHomeViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHomeViewCoordinator.swift; sourceTree = "<group>"; };
 		B3224EFC2BE0856F00835E35 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		B3224EFE2BE1121200835E35 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B3224F002BE1925500835E35 /* HomeViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewM.swift; sourceTree = "<group>"; };
+		B3224F022BE2AF3800835E35 /* NavigationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,8 +281,9 @@
 		B3224EF52BE082C900835E35 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B3224EF82BE083F900835E35 /* HomeRootCoordinator.swift */,
+				B3224EF82BE083F900835E35 /* NavigationHomeViewCoordinator.swift */,
 				B3224EFE2BE1121200835E35 /* View+.swift */,
+				B3224F022BE2AF3800835E35 /* NavigationModal.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -441,8 +444,9 @@
 				B3224EE42BE0639F00835E35 /* MessagesInGroup.swift in Sources */,
 				B3224EE92BE0650C00835E35 /* SettingView.swift in Sources */,
 				B3224EB12BE062B400835E35 /* EnumNavigatorAndSwiftDataApp.swift in Sources */,
-				B3224EF92BE083F900835E35 /* HomeRootCoordinator.swift in Sources */,
+				B3224EF92BE083F900835E35 /* NavigationHomeViewCoordinator.swift in Sources */,
 				B3224EE22BE0637B00835E35 /* GroupOfMessages.swift in Sources */,
+				B3224F032BE2AF3800835E35 /* NavigationModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +617,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,7 +646,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -39,16 +39,21 @@ extension Root1NavigationLinkValues: Equatable, Hashable{
     }
     
     static func == (lhs: Root1NavigationLinkValues, rhs: Root1NavigationLinkValues) -> Bool {
-
-        switch (lhs, rhs){
-        case (.destination1, .destination1):
-            return true
-            
-        case let (.destination2(title: title1, lista: lista1), .destination2(title: title2, lista: lista2)):
-            return title1 == title2 && lista1.wrappedValue == lista2.wrappedValue
-            
-        default:
-            return true
-        }
+        
+        return lhs.hashValue == rhs.hashValue
     }
+    
+//    static func == (lhs: Root1NavigationLinkValues, rhs: Root1NavigationLinkValues) -> Bool {
+//
+//        switch (lhs, rhs){
+//        case (.destination1, .destination1):
+//            return true
+//            
+//        case let (.destination2(title: title1, lista: lista1), .destination2(title: title2, lista: lista2)):
+//            return title1 == title2 && lista1.wrappedValue == lista2.wrappedValue
+//            
+//        default:
+//            return true
+//        }
+//    }
 }

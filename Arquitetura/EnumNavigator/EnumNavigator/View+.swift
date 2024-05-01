@@ -10,7 +10,7 @@ import SwiftUI
 extension View {
     func navigationLinkValues<D>(_ data: D.Type) -> some View where D: Hashable & View{
         NavigationStack{
-            Root1View().navigationDestination(for: Root1NavigationLinkValues.self, destination: { $0 })
+            self.navigationDestination(for: Root1NavigationLinkValues.self, destination: { $0 })
         }
     }
     

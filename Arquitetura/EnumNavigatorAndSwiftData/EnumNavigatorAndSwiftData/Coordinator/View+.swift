@@ -8,12 +8,12 @@
 import SwiftUI
 
 extension View {
-    func navigationLinkValues<D>(_ data: D.Type) -> some View where D: Hashable & View{
+    func navigationLinkHomeValues<D>(_ data: D.Type) -> some View where D: Hashable & View{
         NavigationStack{
-            HomeView().navigationDestination(for: HomeRootNavigator.self, destination: { $0 })
+          self.navigationDestination(for: NavigationHomeViewCoordinator.self, destination: { $0 })
         }
     }
-    
+  
     @ViewBuilder
     func `if` <Content: View>(_ condition: @autoclosure () -> Bool, transform: (Self) -> Content) -> some View {
         if condition() {

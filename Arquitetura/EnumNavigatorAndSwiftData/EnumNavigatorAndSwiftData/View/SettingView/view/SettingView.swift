@@ -9,7 +9,12 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        Text("SettingView")
+        VStack{
+            NavigationModal(.sheet, value: NavigationHomeViewCoordinator.config, data: NavigationHomeViewCoordinator.self) {
+                Text("Hello")
+            }
+        }
+     
     }
 }
 

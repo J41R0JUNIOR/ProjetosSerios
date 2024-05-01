@@ -22,7 +22,7 @@ struct Destination2View: View {
                 })
             }
             
-        }.navigationTitle("Destination2View")
+        }.navigationTitle(title)
     }
 }
 

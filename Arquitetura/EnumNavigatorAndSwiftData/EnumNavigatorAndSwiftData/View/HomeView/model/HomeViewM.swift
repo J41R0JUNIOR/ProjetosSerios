@@ -10,6 +10,7 @@ import Foundation
 @Observable
 class HomeViewM{
     var dataManager: DataManager?
-    var isTrue = false
+    var showAlert = false
     var newName = ""
+    var openModal = false
 }

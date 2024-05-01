@@ -18,14 +18,14 @@ struct Root1View: View {
             NavigationLink(value: Root1NavigationLinkValues.destination2(title: "Destination2", lista: $a)) {
                 Text("Destination2View")
             }
+     
+                NavigationModal(.sheet, value: Root1NavigationLinkValues.destination1, data: Root1NavigationLinkValues.self) {
+                    Text("DestinationModal1")
+                    
+                }
             
-            NavigationModal(.sheet, value: Root1NavigationLinkValues.destination1, data: Root1NavigationLinkValues.self) {
-                print("Dismissed")
-            } label: {
-                Text("Destination1Sheet")
-            }
-            
-            NavigationModal(.fullScreenCover, value: Root1NavigationLinkValues.destination1, data: Root1NavigationLinkValues.self) {
+//
+            NavigationModal(.fullScreenCover, value: Root1NavigationLinkValues.destination2(title: "", lista: $a), data: Root1NavigationLinkValues.self) {
                 print("Dismissed")
             } label: {
                 Text("Destination1FullScreenCover")

@@ -14,27 +14,35 @@ struct HomeView: View {
     @Query(sort: [SortDescriptor(\GroupOfMessages.priority, order: .reverse)]) var groups: [GroupOfMessages]
     @Bindable var model = HomeViewM()
     
-    
     var body: some View {
         VStack{
             Button("add") {
-                model.isTrue = true
-            }.alert("Tem certeza?", isPresented: $model.isTrue) {
+                model.showAlert = true
+            }
+            .foregroundStyle(.black)
+            .alert("Tem certeza?", isPresented: $model.showAlert) {
                 TextField("Nome do grupo", text: $model.newName)
                 Button("Cancelar"){
-                    model.isTrue = false
+                    model.showAlert = false
                 }
                 Button("Confirmar") {
                     model.dataManager?.addGroup(name: model.newName)
+                    model.newName = ""
                 }
             }
             
             List{
                 ForEach(groups, id: \.self){group in
                     
-                    NavigationLink(value: HomeRootNavigator.group(group: .constant(group))){
+                    NavigationLink(value: NavigationHomeViewCoordinator.group(group: .constant(group))){
                         Text(group.name)
                     }
+                                        
+                    NavigationModal(.sheet, value: NavigationHomeViewCoordinator.group(group: .constant(group)), data: NavigationHomeViewCoordinator.self) {
+                        Text(group.name)
+                    }
+              
+            
                 }
                 .onDelete(perform: { indexSet in
                     model.dataManager?.deleteGroup(indexSet: indexSet, groupOfMessages: groups)

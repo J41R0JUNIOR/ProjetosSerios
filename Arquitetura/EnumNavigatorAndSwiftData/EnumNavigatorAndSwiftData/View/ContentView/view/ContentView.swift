@@ -14,11 +14,14 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .navigationLinkValues(HomeRootNavigator.self)
+                .navigationLinkHomeValues(NavigationHomeViewCoordinator.self)
+            
             .tabItem {
                 Image(systemName: "house")
             }
             SettingView()
+                .navigationLinkHomeValues(NavigationHomeViewCoordinator.self)
+
             .tabItem {
                 Image(systemName: "gear")
             }
