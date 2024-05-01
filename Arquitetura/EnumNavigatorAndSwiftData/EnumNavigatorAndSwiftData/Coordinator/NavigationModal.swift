@@ -42,7 +42,6 @@ struct NavigationModal<Value:View, Label: View, D: Hashable & View>: View {
                     NavigationStack{
                         value
                             .navigationLinkHomeValues(data)
-//                            .navigationSettingValues(data)
                     }
                 })
         }
@@ -52,7 +51,6 @@ struct NavigationModal<Value:View, Label: View, D: Hashable & View>: View {
                     NavigationStack{
                         value
                             .navigationLinkHomeValues(data)
-//                            .navigationSettingValues(data)
                     }
                 })
         }

@@ -34,11 +34,11 @@ struct HomeView: View {
             List{
                 ForEach(groups, id: \.self){group in
                     
-                    NavigationLink(value: NavigationHomeViewCoordinator.group(group: .constant(group))){
-                        Text(group.name)
-                    }
+//                    NavigationLink(value: NavigationHomeViewCoordinator.group(group: .constant(group))){
+//                        Text(group.name)
+//                    }
                                         
-                    NavigationModal(.sheet, value: NavigationHomeViewCoordinator.group(group: .constant(group)), data: NavigationHomeViewCoordinator.self) {
+                    NavigationModal(.fullScreenCover, value: NavigationHomeViewCoordinator.group(group: .constant(group)), data: NavigationHomeViewCoordinator.self) {
                         Text(group.name)
                     }
               

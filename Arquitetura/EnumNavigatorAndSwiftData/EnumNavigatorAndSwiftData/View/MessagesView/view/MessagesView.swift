@@ -13,6 +13,8 @@ struct MessagesView: View {
     @State var dataManager: DataManager?
     @Binding var group:GroupOfMessages
     @State var message = ""
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     
     var body: some View {
         VStack{
@@ -33,12 +35,26 @@ struct MessagesView: View {
                     dataManager?.addMessage(newMessage: message, groups: group)
                     message = ""
                 }, label: {
-                    Image(systemName: "paperplane.circle.fill")
-
+                    Image(systemName: "paperplane.circle.fill").foregroundStyle(.black)
+                    
                 })
             }  .padding()
         }
-      
+        .toolbar{
+            
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Back", action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }).foregroundStyle(.black)
+            }
+            
+//            Button("Back", action: {
+//                self.presentationMode.wrappedValue.dismiss()
+//            }).foregroundStyle(.black)
+            
+            
+        }
+        
         .onAppear{
             dataManager = DataManager(modelContext: modelContext)
         }
