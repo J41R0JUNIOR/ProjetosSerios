@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CoreMotion
 
 
 struct ContentView: View {
@@ -14,18 +15,15 @@ struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
-                .navigationLinkHomeValues(NavigationHomeViewCoordinator.self)
-            
             .tabItem {
                 Image(systemName: "house")
             }
+            
             SettingView()
-                .navigationLinkHomeValues(NavigationHomeViewCoordinator.self)
-
             .tabItem {
                 Image(systemName: "gear")
             }
-        }
+        }.navigationLinkValues(NavigationHomeViewCoordinator.self)
     }
 }
 

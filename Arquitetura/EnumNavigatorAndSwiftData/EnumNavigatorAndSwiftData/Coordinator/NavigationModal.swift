@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum NavigationModalType {
     case sheet, fullScreenCover
@@ -41,7 +42,7 @@ struct NavigationModal<Value:View, Label: View, D: Hashable & View>: View {
                 .sheet(isPresented: $isPresented, onDismiss: onDismiss, content: {
                     NavigationStack{
                         value
-                            .navigationLinkHomeValues(data)
+                            .navigationLinkValues(data)
                     }
                 })
         }
@@ -50,11 +51,18 @@ struct NavigationModal<Value:View, Label: View, D: Hashable & View>: View {
                 .fullScreenCover(isPresented: $isPresented, onDismiss: onDismiss, content: {
                     NavigationStack{
                         value
-                            .navigationLinkHomeValues(data)
+                            .navigationLinkValues(data)
                     }
                 })
+                
         }
     }
 }
 
+
+#Preview {
+    let modelContent: ModelContainer = .appContainer
+
+    return ContentView().modelContainer(modelContent)
+}
 

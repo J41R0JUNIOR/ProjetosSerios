@@ -42,6 +42,8 @@ struct HomeView: View {
                         Text(group.name)
                     }
               
+                    
+              
             
                 }
                 .onDelete(perform: { indexSet in

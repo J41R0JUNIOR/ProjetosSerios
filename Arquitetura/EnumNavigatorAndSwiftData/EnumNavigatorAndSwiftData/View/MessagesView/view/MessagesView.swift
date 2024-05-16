@@ -45,7 +45,8 @@ struct MessagesView: View {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Back", action: {
                     self.presentationMode.wrappedValue.dismiss()
-                }).foregroundStyle(.black)
+                })
+                .colorInvert()
             }
             
 //            Button("Back", action: {
@@ -54,7 +55,6 @@ struct MessagesView: View {
             
             
         }
-        
         .onAppear{
             dataManager = DataManager(modelContext: modelContext)
         }
