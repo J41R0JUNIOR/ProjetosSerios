@@ -54,7 +54,6 @@ struct NavigationModal<Value:View, Label: View, D: Hashable & View>: View {
                             .navigationLinkValues(data)
                     }
                 })
-                
         }
     }
 }

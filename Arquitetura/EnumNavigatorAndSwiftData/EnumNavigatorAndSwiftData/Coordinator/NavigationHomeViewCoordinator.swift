@@ -28,17 +28,27 @@ enum NavigationHomeViewCoordinator: View{
 
 
 extension NavigationHomeViewCoordinator: Equatable, Hashable{
+    static func == (lhs: NavigationHomeViewCoordinator, rhs: NavigationHomeViewCoordinator) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
     func hash(into hasher: inout Hasher) {
         
         switch self {
 //        case .home:
 //            hasher.combine("home")
             
-        case let .group(group: group):
-            hasher.combine("group\(group)")
-        case .config:
-            hasher.combine("config")
+//        case let .group(group: group):
+//            hasher.combine("group\(group)")
+//        case .config:
+//            hasher.combine("config")
+        
+        default: 
+            hasher.combine("\(self)")
+            
         }
+        
+        
     }
     
     
@@ -49,10 +59,10 @@ extension NavigationHomeViewCoordinator: Equatable, Hashable{
     
     
     
-    static func == (lhs: NavigationHomeViewCoordinator, rhs: NavigationHomeViewCoordinator) -> Bool {
-        
-        return lhs.hashValue == rhs.hashValue
-    }
+//    static func == (lhs: NavigationHomeViewCoordinator, rhs: NavigationHomeViewCoordinator) -> Bool {
+//        
+//        return lhs.hashValue == rhs.hashValue
+//    }
     
 //    static func == (lhs: NavigationCoordinator, rhs: NavigationCoordinator) -> Bool {
 //

@@ -41,6 +41,7 @@ struct HomeView: View {
                     NavigationModal(.fullScreenCover, value: NavigationHomeViewCoordinator.group(group: .constant(group)), data: NavigationHomeViewCoordinator.self) {
                         Text(group.name)
                     }
+//                    .transition(.move(edge: .trailing))
               
                     
               
