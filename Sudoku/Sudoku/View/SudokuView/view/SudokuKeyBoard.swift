@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SudokuKeyBoard: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var selectedNumber: Int
     
     var body: some View {
@@ -16,6 +17,7 @@ struct SudokuKeyBoard: View {
                 ForEach(1..<10) { number in
                     Button(action: {
                         selectedNumber = number
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("\(number)")
                             .font(.title)
