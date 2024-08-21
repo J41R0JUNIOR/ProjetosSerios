@@ -34,4 +34,3 @@ struct SudokuKeyBoard: View {
 #Preview {
     SudokuKeyBoard(selectedNumber: .constant(0))
 }
-

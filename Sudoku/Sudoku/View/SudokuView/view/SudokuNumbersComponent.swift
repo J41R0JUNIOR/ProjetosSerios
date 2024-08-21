@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct SudokuNumbersComponent: View {
-    @State var number: Int = 0
-    @State var correctNumber: Int = 0
-    
+    @Binding var number: Int
+    @Binding var correctNumber: Int
     
     var body: some View {
         VStack{
-            if number == correctNumber{
+            if number == correctNumber {
                 Text("\(number)").foregroundStyle(.primary)
-            }else if number == 0{
+            } else if number == 0 {
                 NavigationModal(.sheet, value: NavigationContentViewCoordinator.sudokuNumbers(number: $number), data: NavigationContentViewCoordinator.self, presentationDetents: [.fraction(0.1)], label: {
                     Text(" ")
                 }, asyncFunction: {})
-            }else{
-//                Text("\(number ?? 0)").foregroundStyle(.red)
+            } else {
                 NavigationModal(.sheet, value: NavigationContentViewCoordinator.sudokuNumbers(number: $number), data: NavigationContentViewCoordinator.self, presentationDetents: [.fraction(0.1)], label: {
                     Text("\(number)").foregroundStyle(.red)
                 }, asyncFunction: {})
@@ -31,5 +29,5 @@ struct SudokuNumbersComponent: View {
 }
 
 #Preview {
-    SudokuNumbersComponent(number: 5, correctNumber: 4)
+    SudokuNumbersComponent(number: .constant(5), correctNumber: .constant(4))
 }

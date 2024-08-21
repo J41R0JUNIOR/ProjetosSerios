@@ -11,7 +11,6 @@ import SwiftData
 struct SudokuView: View {
     var selectedMode: GameSelectionMode?
     @Bindable private var viewModel = SudokuViewModel()
-    //    @Environment(\.modelContext) var modelContext
     @Environment(\.modelContext) var modelContext
     
     @Query(sort: [SortDescriptor(\GameBoard.mode, order: .reverse)]) var games: [GameBoard] = []
@@ -21,23 +20,34 @@ struct SudokuView: View {
     
     var body: some View {
         VStack{
-            Text("Mode:\(games.first?.mode ?? "")")
+            Text("Mode: \(games.first?.mode ?? "")")
             Spacer()
             
             ZStack{
                 Grid3x3View()
                 VStack(spacing: 0) {
-                    ForEach(games.first?.grid.indices ?? [].indices , id: \.self) { rowIndex in
+                    ForEach(games.first?.grid.indices ?? [].indices, id: \.self) { rowIndex in
                         HStack(spacing: 0) {
                             ForEach(games.first?.grid[rowIndex].indices ?? [].indices, id: \.self) { columnIndex in
                                 
-//                                let number = games.first?.grid[rowIndex][columnIndex]
-//                                let correctNumber = games.first?.solution[rowIndex][columnIndex]
-                                
-                                SudokuNumbersComponent(number: games.first?.grid[rowIndex][columnIndex] ?? 0, correctNumber: games.first?.solution[rowIndex][columnIndex] ?? 0)
-                                
-                                    .frame(width: frameWidth, height: frameHeight)
-                                    .border(Color.primary, width: 0.2)
+                                if let game = games.first {
+                                    let numberBinding = Binding(
+                                        get: { game.grid[rowIndex][columnIndex] },
+                                        set: { newValue in
+                                            game.grid[rowIndex][columnIndex] = newValue
+                                            try? modelContext.save()
+                                        }
+                                    )
+                                    
+                                    let correctNumberBinding = Binding(
+                                        get: { game.solution[rowIndex][columnIndex] },
+                                        set: { _ in }
+                                    )
+                                    
+                                    SudokuNumbersComponent(number: numberBinding, correctNumber: correctNumberBinding)
+                                        .frame(width: frameWidth, height: frameHeight)
+                                        .border(Color.primary, width: 0.2)
+                                }
                             }
                         }
                     }
@@ -50,7 +60,6 @@ struct SudokuView: View {
             viewModel.model.dataManager = DataManager(modelContext: modelContext)
         }
     }
-    
 }
 
 #Preview {
