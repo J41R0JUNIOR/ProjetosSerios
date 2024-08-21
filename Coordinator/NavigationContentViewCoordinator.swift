@@ -9,7 +9,7 @@ import SwiftUI
 
 enum NavigationContentViewCoordinator: View{
     case home
-    case homeSelectionMode(selectedMode: Binding<GameSelectionMode>, hasChosen: Binding<Bool>)
+    case homeSelectionMode
     case sudoku(selectedMode: GameSelectionMode)
     case sudokuNumbers(number: Binding<Int>)
     
@@ -20,8 +20,8 @@ enum NavigationContentViewCoordinator: View{
         case .home:
             HomeView()
         
-        case .homeSelectionMode(let selectedMode, let hasChosen):
-            HomeSelectionMode(selectedMode: selectedMode, hasChosen: hasChosen)
+        case .homeSelectionMode:
+            HomeSelectionMode()
             
         case .sudoku(let selectedMode):
             SudokuView(selectedMode: selectedMode)

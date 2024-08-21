@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     var body: some View {
@@ -24,5 +25,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    let modelContent: ModelContainer = .appContainer
+
+    return ContentView().modelContainer(modelContent)
 }

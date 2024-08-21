@@ -27,6 +27,10 @@
 		B3DE97582C75724F00AEFFB9 /* SudokuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97572C75724F00AEFFB9 /* SudokuViewModel.swift */; };
 		B3DE975A2C757E9100AEFFB9 /* SudokuNumbersComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97592C757E9100AEFFB9 /* SudokuNumbersComponent.swift */; };
 		B3DE975C2C75848F00AEFFB9 /* SudokuKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE975B2C75848F00AEFFB9 /* SudokuKeyBoard.swift */; };
+		B3DE975F2C76083E00AEFFB9 /* ModelContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE975E2C76083E00AEFFB9 /* ModelContainerExtension.swift */; };
+		B3DE97612C76086900AEFFB9 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97602C76086900AEFFB9 /* DataManager.swift */; };
+		B3DE97632C7608D000AEFFB9 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97622C7608D000AEFFB9 /* GameBoard.swift */; };
+		B3DE97652C762CB300AEFFB9 /* HomeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97642C762CB300AEFFB9 /* HomeActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		B3DE97572C75724F00AEFFB9 /* SudokuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuViewModel.swift; sourceTree = "<group>"; };
 		B3DE97592C757E9100AEFFB9 /* SudokuNumbersComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuNumbersComponent.swift; sourceTree = "<group>"; };
 		B3DE975B2C75848F00AEFFB9 /* SudokuKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuKeyBoard.swift; sourceTree = "<group>"; };
+		B3DE975E2C76083E00AEFFB9 /* ModelContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerExtension.swift; sourceTree = "<group>"; };
+		B3DE97602C76086900AEFFB9 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B3DE97622C7608D000AEFFB9 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
+		B3DE97642C762CB300AEFFB9 /* HomeActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 		B3DE96F52C73BD8000AEFFB9 /* Sudoku */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE975D2C76081200AEFFB9 /* SwiftData */,
 				B3DE97492C7532E900AEFFB9 /* EnumNavigator */,
 				B3DE97282C75129400AEFFB9 /* Model */,
 				B3DE97272C75112E00AEFFB9 /* View */,
@@ -178,6 +187,7 @@
 			children = (
 				B3DE97252C7510D300AEFFB9 /* HomeView.swift */,
 				B3DE97502C753B6100AEFFB9 /* HomeSelectionMode.swift */,
+				B3DE97642C762CB300AEFFB9 /* HomeActionButton.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -252,6 +262,16 @@
 				B3DE97572C75724F00AEFFB9 /* SudokuViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		B3DE975D2C76081200AEFFB9 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				B3DE975E2C76083E00AEFFB9 /* ModelContainerExtension.swift */,
+				B3DE97602C76086900AEFFB9 /* DataManager.swift */,
+				B3DE97622C7608D000AEFFB9 /* GameBoard.swift */,
+			);
+			path = SwiftData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +413,10 @@
 				B3DE97512C753B6100AEFFB9 /* HomeSelectionMode.swift in Sources */,
 				B3DE974D2C75338A00AEFFB9 /* NavigationModal.swift in Sources */,
 				B3DE97582C75724F00AEFFB9 /* SudokuViewModel.swift in Sources */,
+				B3DE97612C76086900AEFFB9 /* DataManager.swift in Sources */,
+				B3DE97652C762CB300AEFFB9 /* HomeActionButton.swift in Sources */,
+				B3DE97632C7608D000AEFFB9 /* GameBoard.swift in Sources */,
+				B3DE975F2C76083E00AEFFB9 /* ModelContainerExtension.swift in Sources */,
 				B3DE972C2C75153B00AEFFB9 /* Info.swift in Sources */,
 				B3DE974E2C75338A00AEFFB9 /* NavigationContentViewCoordinator.swift in Sources */,
 				B3DE975C2C75848F00AEFFB9 /* SudokuKeyBoard.swift in Sources */,

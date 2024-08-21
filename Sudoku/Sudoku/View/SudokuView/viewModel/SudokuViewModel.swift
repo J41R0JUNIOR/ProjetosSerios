@@ -6,19 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable
 class SudokuViewModel{
     var model = SudokuModel()
-    
- 
-        func loadGame(mode: GameSelectionMode) async {
-            do {
-                 await model.apiCall.newGame(mode: mode)
-                model.grid = model.apiCall.gameGrid
-                model.solution = model.apiCall.solutionGrid
-            }
-    
-    }
 
 }

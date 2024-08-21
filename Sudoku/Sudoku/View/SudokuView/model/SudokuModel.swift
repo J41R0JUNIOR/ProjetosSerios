@@ -13,4 +13,5 @@ class SudokuModel{
     var solution: [[Int]] = [[]]
     var mode: String = ""
     var apiCall: ApiCall = .init()
+    var dataManager: DataManager?
 }

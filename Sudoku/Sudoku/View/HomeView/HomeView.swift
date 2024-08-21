@@ -4,40 +4,56 @@
 //
 //  Created by Jairo Júnior on 20/08/24.
 //
-
 import SwiftUI
+import SwiftData
+
 struct HomeView: View {
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: [SortDescriptor(\GameBoard.mode, order: .reverse)]) var games: [GameBoard]
+    
     @State var choice: GameSelectionMode = .medium
-    @State var hasChosen = false
+    @State var showAlert = false
+    @State var showNewGameSheet = false
+    @State var dataManager: DataManager?
     
     var body: some View {
-        VStack{
-            switch hasChosen{
-            case false:
-                NavigationModal(.sheet, value: NavigationContentViewCoordinator.homeSelectionMode(selectedMode: $choice, hasChosen: $hasChosen), data: NavigationContentViewCoordinator.self, presentationDetents: [.fraction(0.3)]) {
-                    Text("Create Game")
-                } asyncFunction: {}
-                
-            case true:
-                NavigationModal(.sheet, value: NavigationContentViewCoordinator.homeSelectionMode(selectedMode: $choice, hasChosen: $hasChosen), data: NavigationContentViewCoordinator.self, presentationDetents: [.fraction(0.3)]) {
-                    Text("Create Game")
-                } asyncFunction: {}
-                
+        VStack {
+            if !games.isEmpty {
                 NavigationLink(value: NavigationContentViewCoordinator.sudoku(selectedMode: choice)) {
-                    Text("Start")
+                    Text("Continue")
                 }
             }
-           
-
-        }.buttonStyle(.borderedProminent)
-            .onAppear(perform: {
-                hasChosen = false
-            })
             
-
+            if !games.isEmpty{
+                Button("New game") {
+                    showAlert.toggle()
+                }
+                .alert("Are you sure? It'll delete your progress", isPresented: $showAlert) {
+                    Button("Yes") {
+                        showAlert.toggle()
+                        showNewGameSheet.toggle()
+                    }
+                    Button("No", role: .cancel, action: {})
+                }
+                .sheet(isPresented: $showNewGameSheet) {
+                    HomeSelectionMode().presentationDetents([.fraction(0.3)])
+                }
+            }else{
+                NavigationModal(.sheet, value: NavigationContentViewCoordinator.homeSelectionMode, data: NavigationContentViewCoordinator.self, presentationDetents: [.fraction(0.3)]) {
+                    Text("New game")
+                } asyncFunction: {}
+            }
+        }
+        .buttonStyle(.borderedProminent)
+        .onAppear(perform: {
+            dataManager = DataManager(modelContext: modelContext)
+        })
     }
 }
 
 #Preview {
-    HomeView().navigationLinkValues(NavigationContentViewCoordinator.self)
+    let modelContent: ModelContainer = .appContainer
+    return HomeView()
+        .navigationLinkValues(NavigationContentViewCoordinator.self)
+        .modelContainer(modelContent)
 }

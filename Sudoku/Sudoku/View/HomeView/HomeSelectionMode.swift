@@ -6,45 +6,31 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeSelectionMode: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Binding var selectedMode: GameSelectionMode
-    @Binding var hasChosen: Bool
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: [SortDescriptor(\GameBoard.mode, order: .reverse)]) var games: [GameBoard]
     
+    @State var selectedMode: GameSelectionMode?
+    @State var hasChosen: Bool?
+    @State var dataManager: DataManager?
+    @State var apiCall = ApiCall()
+
     var body: some View {
-        VStack{
-
-            Button(action: {
-                selectedMode = .easy
-                hasChosen = true
-                self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Easy").frame(width: UIScreen.main.bounds.width * 0.7)
-            })
-            
-            Button(action: {
-                selectedMode = .medium
-                hasChosen = true
-
-                self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Medium").frame(width: UIScreen.main.bounds.width * 0.8)
-            })
-            
-            Button(action: {
-                selectedMode = .hard
-                hasChosen = true
-
-                self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Hard").frame(width: UIScreen.main.bounds.width * 0.7)
-            })
+        VStack {
+            HomeActionButton(title: "Easy", mode: .easy, dataManager: dataManager, apiCall: apiCall, presentationMode: presentationMode,labelWidth: 0.7)
+            HomeActionButton(title: "Medium", mode: .medium, dataManager: dataManager, apiCall: apiCall, presentationMode: presentationMode, labelWidth: 0.8)
+            HomeActionButton(title: "Hard", mode: .hard, dataManager: dataManager, apiCall: apiCall, presentationMode: presentationMode, labelWidth: 0.7)
         }
         .buttonStyle(.borderedProminent)
+        .onAppear(perform: {
+            dataManager = DataManager(modelContext: modelContext)
+        })
     }
 }
 
 #Preview {
-    HomeSelectionMode( selectedMode: .constant(.hard), hasChosen: .constant(false)).navigationLinkValues(NavigationContentViewCoordinator.self)
+    HomeSelectionMode().navigationLinkValues(NavigationContentViewCoordinator.self)
 }
