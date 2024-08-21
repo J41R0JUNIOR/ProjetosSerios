@@ -16,33 +16,42 @@ struct SudokuView: View {
     
     @Query(sort: [SortDescriptor(\GameBoard.mode, order: .reverse)]) var games: [GameBoard] = []
     
+    var frameWidth = (UIScreen.main.bounds.width / 9) * 0.95
+    var frameHeight = (UIScreen.main.bounds.width / 9) * 1
     
     var body: some View {
         VStack{
-            Text("Mode:\(String(describing: games.first?.mode))")
-            VStack(spacing: 0) {
-                ForEach(games.first?.grid.indices ?? [].indices , id: \.self) { rowIndex in
-                    HStack(spacing: 0) {
-                        ForEach(games.first?.grid[rowIndex].indices ?? [].indices, id: \.self) { columnIndex in
-                            let number = games.first?.grid[rowIndex][columnIndex]
-                            let correctNumber = games.first?.solution[rowIndex][columnIndex]
-                            
-                            SudokuNumbersComponent(number: number ?? 0, correctNumber: correctNumber ?? 0)
-                                .frame(width: UIScreen.main.bounds.width / 9, height: UIScreen.main.bounds.width / 9)
-                                .border(Color.blue, width: 0.5)
+            Text("Mode:\(games.first?.mode ?? "")")
+            Spacer()
+            
+            ZStack{
+                Grid3x3View()
+                VStack(spacing: 0) {
+                    ForEach(games.first?.grid.indices ?? [].indices , id: \.self) { rowIndex in
+                        HStack(spacing: 0) {
+                            ForEach(games.first?.grid[rowIndex].indices ?? [].indices, id: \.self) { columnIndex in
+                                let number = games.first?.grid[rowIndex][columnIndex]
+                                let correctNumber = games.first?.solution[rowIndex][columnIndex]
+                                
+                                SudokuNumbersComponent(number: number ?? 0, correctNumber: correctNumber ?? 0)
+                                    .frame(width: frameWidth, height: frameHeight)
+                                    .border(Color.primary, width: 0.5)
+                            }
                         }
                     }
                 }
             }
+            
+            Spacer()
         }
         .onAppear {
             viewModel.model.dataManager = DataManager(modelContext: modelContext)
             
-//            if games.isEmpty {
-//                Task {
-//                    await viewModel.loadGame(mode: selectedMode ?? .medium)
-//                }
-//            }
+            //            if games.isEmpty {
+            //                Task {
+            //                    await viewModel.loadGame(mode: selectedMode ?? .medium)
+            //                }
+            //            }
         }
     }
     
