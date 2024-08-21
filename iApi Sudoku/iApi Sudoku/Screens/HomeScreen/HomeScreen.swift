@@ -22,10 +22,10 @@ struct HomeScreen: View {
                     Text("Generate")
                 }.buttonStyle(.borderedProminent)
 
-                Text("Message: \(viewModel.sudoku?.newboard.message ?? "None message")")
-                Text("Results: \(viewModel.sudoku?.newboard.results ?? 0)")
-                Text("Dificuldade: \(viewModel.sudoku?.newboard.grids[0].difficulty ?? "nothing")")
-
+                Text("Message: \(viewModel.sudoku?.info ?? "None message")")
+//                Text("Results: \(viewModel.sudoku?.newboard. ?? 0)")
+//                Text("Dificuldade: \(viewModel.sudoku?.newboard. ?? "nothing")")
+ 
                 MainSudokuView(sudoku: MainSudokuMV(model: MainSudokuM(gameGrid: viewModel.gameGrid, solutionGrid: $viewModel.solutionGrid)))
             }
         }

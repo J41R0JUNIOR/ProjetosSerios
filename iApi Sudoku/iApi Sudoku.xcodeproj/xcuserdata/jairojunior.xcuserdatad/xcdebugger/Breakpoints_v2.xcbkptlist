@@ -18,38 +18,6 @@
             endingLineNumber = "15"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "D2A41AEB-08E4-4C5B-ABB9-A8BC30CEEBAB - 8b2ee76b75479a36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iApi_Sudoku.MainSudokuView.body.getter : some"
-                  moduleName = "iApi Sudoku"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jairojunior/Documents/GitHub/CRAZY-PROJECTS-SWIFT/Testes/Projects/Jornada%20Pessoal/iApi%20Sudoku/iApi%20Sudoku/View/MainSudokuView/MainSudokuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "D2A41AEB-08E4-4C5B-ABB9-A8BC30CEEBAB - fc50361a6c223b3f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Swift.Int&gt;) -&gt; SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Text&gt;&gt; in iApi_Sudoku.MainSudokuView.body.getter : some"
-                  moduleName = "iApi Sudoku"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jairojunior/Documents/GitHub/CRAZY-PROJECTS-SWIFT/Testes/Projects/Jornada%20Pessoal/iApi%20Sudoku/iApi%20Sudoku/View/MainSudokuView/MainSudokuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "136">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -11,9 +11,6 @@
 		B3224EB32BE062B400835E35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EB22BE062B400835E35 /* ContentView.swift */; };
 		B3224EB52BE062B500835E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3224EB42BE062B500835E35 /* Assets.xcassets */; };
 		B3224EB82BE062B500835E35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3224EB72BE062B500835E35 /* Preview Assets.xcassets */; };
-		B3224EC22BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EC12BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.swift */; };
-		B3224ECC2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224ECB2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.swift */; };
-		B3224ECE2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224ECD2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITestsLaunchTests.swift */; };
 		B3224EE22BE0637B00835E35 /* GroupOfMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EE12BE0637B00835E35 /* GroupOfMessages.swift */; };
 		B3224EE42BE0639F00835E35 /* MessagesInGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EE32BE0639F00835E35 /* MessagesInGroup.swift */; };
 		B3224EE62BE063CC00835E35 /* ModelContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EE52BE063CC00835E35 /* ModelContainerExtension.swift */; };
@@ -25,6 +22,9 @@
 		B3224EFF2BE1121200835E35 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224EFE2BE1121200835E35 /* View+.swift */; };
 		B3224F012BE1925500835E35 /* HomeViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224F002BE1925500835E35 /* HomeViewM.swift */; };
 		B3224F032BE2AF3800835E35 /* NavigationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3224F022BE2AF3800835E35 /* NavigationModal.swift */; };
+		B3DE97432C7530C000AEFFB9 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97402C7530BF00AEFFB9 /* View+.swift */; };
+		B3DE97442C7530C000AEFFB9 /* NavigationHomeViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97412C7530BF00AEFFB9 /* NavigationHomeViewCoordinator.swift */; };
+		B3DE97452C7530C000AEFFB9 /* NavigationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE97422C7530BF00AEFFB9 /* NavigationModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +64,7 @@
 		B3224EB42BE062B500835E35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3224EB72BE062B500835E35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3224EBD2BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnumNavigatorAndSwiftDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3224EC12BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNavigatorAndSwiftDataTests.swift; sourceTree = "<group>"; };
 		B3224EC72BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnumNavigatorAndSwiftDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3224ECB2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNavigatorAndSwiftDataUITests.swift; sourceTree = "<group>"; };
-		B3224ECD2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNavigatorAndSwiftDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B3224EE12BE0637B00835E35 /* GroupOfMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupOfMessages.swift; sourceTree = "<group>"; };
 		B3224EE32BE0639F00835E35 /* MessagesInGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInGroup.swift; sourceTree = "<group>"; };
 		B3224EE52BE063CC00835E35 /* ModelContainerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerExtension.swift; sourceTree = "<group>"; };
@@ -79,20 +76,9 @@
 		B3224EFE2BE1121200835E35 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		B3224F002BE1925500835E35 /* HomeViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewM.swift; sourceTree = "<group>"; };
 		B3224F022BE2AF3800835E35 /* NavigationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModal.swift; sourceTree = "<group>"; };
-		B32413132BE4176800FCF10F /* ExtensaoTesteAppleWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensaoTesteAppleWatchApp.swift; sourceTree = "<group>"; };
-		B32413152BE4176800FCF10F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B32413172BE4176900FCF10F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B324131A2BE4176900FCF10F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B32413242BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensaoTesteAppleWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
-		B324132E2BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensaoTesteAppleWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		B32413302BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensaoTesteAppleWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B35150AB2BE4107700FDDF76 /* ArquiteturaAndAppleWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArquiteturaAndAppleWatchApp.swift; sourceTree = "<group>"; };
-		B35150AD2BE4107700FDDF76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B35150AF2BE4107800FDDF76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B35150B22BE4107800FDDF76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B35150BC2BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArquiteturaAndAppleWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
-		B35150C62BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArquiteturaAndAppleWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		B35150C82BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArquiteturaAndAppleWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B3DE97402C7530BF00AEFFB9 /* View+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		B3DE97412C7530BF00AEFFB9 /* NavigationHomeViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHomeViewCoordinator.swift; sourceTree = "<group>"; };
+		B3DE97422C7530BF00AEFFB9 /* NavigationModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,14 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				B3224EAF2BE062B400835E35 /* EnumNavigatorAndSwiftData */,
-				B3224EC02BE062B600835E35 /* EnumNavigatorAndSwiftDataTests */,
-				B3224ECA2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests */,
-				B35150AA2BE4107700FDDF76 /* ArquiteturaAndAppleWatch Watch App */,
-				B35150BB2BE4107800FDDF76 /* ArquiteturaAndAppleWatch Watch AppTests */,
-				B35150C52BE4107800FDDF76 /* ArquiteturaAndAppleWatch Watch AppUITests */,
-				B32413122BE4176800FCF10F /* ExtensaoTesteAppleWatch Watch App */,
-				B32413232BE4176900FCF10F /* ExtensaoTesteAppleWatch Watch AppTests */,
-				B324132D2BE4176900FCF10F /* ExtensaoTesteAppleWatch Watch AppUITests */,
 				B3224EAE2BE062B400835E35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,23 +142,6 @@
 				B3224EB72BE062B500835E35 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B3224EC02BE062B600835E35 /* EnumNavigatorAndSwiftDataTests */ = {
-			isa = PBXGroup;
-			children = (
-				B3224EC12BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.swift */,
-			);
-			path = EnumNavigatorAndSwiftDataTests;
-			sourceTree = "<group>";
-		};
-		B3224ECA2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B3224ECB2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.swift */,
-				B3224ECD2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITestsLaunchTests.swift */,
-			);
-			path = EnumNavigatorAndSwiftDataUITests;
 			sourceTree = "<group>";
 		};
 		B3224EDA2BE062DD00835E35 /* SwiftData */ = {
@@ -314,6 +275,9 @@
 		B3224EF52BE082C900835E35 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B3DE97412C7530BF00AEFFB9 /* NavigationHomeViewCoordinator.swift */,
+				B3DE97422C7530BF00AEFFB9 /* NavigationModal.swift */,
+				B3DE97402C7530BF00AEFFB9 /* View+.swift */,
 				B3224EF82BE083F900835E35 /* NavigationHomeViewCoordinator.swift */,
 				B3224EFE2BE1121200835E35 /* View+.swift */,
 				B3224F022BE2AF3800835E35 /* NavigationModal.swift */,
@@ -335,78 +299,6 @@
 				B3224EFC2BE0856F00835E35 /* MessagesView.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		B32413122BE4176800FCF10F /* ExtensaoTesteAppleWatch Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				B32413132BE4176800FCF10F /* ExtensaoTesteAppleWatchApp.swift */,
-				B32413152BE4176800FCF10F /* ContentView.swift */,
-				B32413172BE4176900FCF10F /* Assets.xcassets */,
-				B32413192BE4176900FCF10F /* Preview Content */,
-			);
-			path = "ExtensaoTesteAppleWatch Watch App";
-			sourceTree = "<group>";
-		};
-		B32413192BE4176900FCF10F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B324131A2BE4176900FCF10F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B32413232BE4176900FCF10F /* ExtensaoTesteAppleWatch Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B32413242BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppTests.swift */,
-			);
-			path = "ExtensaoTesteAppleWatch Watch AppTests";
-			sourceTree = "<group>";
-		};
-		B324132D2BE4176900FCF10F /* ExtensaoTesteAppleWatch Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B324132E2BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppUITests.swift */,
-				B32413302BE4176900FCF10F /* ExtensaoTesteAppleWatch_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "ExtensaoTesteAppleWatch Watch AppUITests";
-			sourceTree = "<group>";
-		};
-		B35150AA2BE4107700FDDF76 /* ArquiteturaAndAppleWatch Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				B35150AB2BE4107700FDDF76 /* ArquiteturaAndAppleWatchApp.swift */,
-				B35150AD2BE4107700FDDF76 /* ContentView.swift */,
-				B35150AF2BE4107800FDDF76 /* Assets.xcassets */,
-				B35150B12BE4107800FDDF76 /* Preview Content */,
-			);
-			path = "ArquiteturaAndAppleWatch Watch App";
-			sourceTree = "<group>";
-		};
-		B35150B12BE4107800FDDF76 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B35150B22BE4107800FDDF76 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B35150BB2BE4107800FDDF76 /* ArquiteturaAndAppleWatch Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B35150BC2BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppTests.swift */,
-			);
-			path = "ArquiteturaAndAppleWatch Watch AppTests";
-			sourceTree = "<group>";
-		};
-		B35150C52BE4107800FDDF76 /* ArquiteturaAndAppleWatch Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B35150C62BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppUITests.swift */,
-				B35150C82BE4107800FDDF76 /* ArquiteturaAndAppleWatch_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "ArquiteturaAndAppleWatch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,13 +436,16 @@
 				B3224EE62BE063CC00835E35 /* ModelContainerExtension.swift in Sources */,
 				B3224EF42BE07E9800835E35 /* DataManager.swift in Sources */,
 				B3224F012BE1925500835E35 /* HomeViewM.swift in Sources */,
+				B3DE97432C7530C000AEFFB9 /* View+.swift in Sources */,
 				B3224EEF2BE0657E00835E35 /* HomeView.swift in Sources */,
+				B3DE97442C7530C000AEFFB9 /* NavigationHomeViewCoordinator.swift in Sources */,
 				B3224EB32BE062B400835E35 /* ContentView.swift in Sources */,
 				B3224EFF2BE1121200835E35 /* View+.swift in Sources */,
 				B3224EE42BE0639F00835E35 /* MessagesInGroup.swift in Sources */,
 				B3224EE92BE0650C00835E35 /* SettingView.swift in Sources */,
 				B3224EB12BE062B400835E35 /* EnumNavigatorAndSwiftDataApp.swift in Sources */,
 				B3224EF92BE083F900835E35 /* NavigationHomeViewCoordinator.swift in Sources */,
+				B3DE97452C7530C000AEFFB9 /* NavigationModal.swift in Sources */,
 				B3224EE22BE0637B00835E35 /* GroupOfMessages.swift in Sources */,
 				B3224F032BE2AF3800835E35 /* NavigationModal.swift in Sources */,
 			);
@@ -560,7 +455,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3224EC22BE062B600835E35 /* EnumNavigatorAndSwiftDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,8 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3224ECC2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITests.swift in Sources */,
-				B3224ECE2BE062B600835E35 /* EnumNavigatorAndSwiftDataUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

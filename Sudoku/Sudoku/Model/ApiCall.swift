@@ -1,25 +1,37 @@
 //
-//  HomeScreenM.swift
-//  iApi Sudoku
+//  ApiCall.swift
+//  Sudoku
 //
-//  Created by Jairo Júnior on 26/10/23.
+//  Created by Jairo Júnior on 20/08/24.
 //
 
 import Foundation
-import SwiftUI
 
-@MainActor
-class HomeScreenMV: ObservableObject {
-    @Published var sudoku: BringInfo?
-    @Published var gameGrid: [[Int]] = [[]]
-    @Published var solutionGrid: [[Int]] = [[]]
+struct SudokuGridGame{
+    var grid: [[Int]]
+    var solution: [[Int]]
+}
+
+@Observable
+class ApiCall{
+     var sudoku: BringInfo?
+     var gameGrid: [[Int]] = [[]]
+     var solutionGrid: [[Int]] = [[]]    
     
 //    @StateObject var model = HomeScreenM()
 
-    func newGame() async {
+    func newGame(mode: GameSelectionMode) async {
         do {
             sudoku = try await newBoard()
-            gameGrid = sudoku?.easy ?? [[]]
+            switch mode {
+            case .easy:
+                gameGrid = sudoku?.easy ?? [[]]
+            case .medium:
+                gameGrid = sudoku?.medium ?? [[]]
+            case .hard:
+                gameGrid = sudoku?.hard ?? [[]]
+            }
+           
             solutionGrid = sudoku?.data ?? [[]]
             
         } catch ApiError.invalidUrl {
@@ -60,3 +72,4 @@ class HomeScreenMV: ObservableObject {
         }
     }
 }
+
