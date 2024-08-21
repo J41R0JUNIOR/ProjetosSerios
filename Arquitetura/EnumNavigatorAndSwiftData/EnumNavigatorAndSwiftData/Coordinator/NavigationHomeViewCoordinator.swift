@@ -15,8 +15,8 @@ enum NavigationHomeViewCoordinator: View{
     var body: some View {
         
         switch self {
-                    case .home:
-                        HomeView()
+        case .home:
+            HomeView()
             
         case .group(let group):
             MessagesView(group: group)

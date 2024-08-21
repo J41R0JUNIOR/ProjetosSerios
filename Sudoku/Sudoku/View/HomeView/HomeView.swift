@@ -10,6 +10,7 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: [SortDescriptor(\GameBoard.mode, order: .reverse)]) var games: [GameBoard]
+//    @Bindable var games: [GameBoard]?
     
     @State var choice: GameSelectionMode = .medium
     @State var showAlert = false

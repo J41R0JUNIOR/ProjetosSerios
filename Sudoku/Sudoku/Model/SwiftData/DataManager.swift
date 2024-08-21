@@ -19,7 +19,7 @@ class DataManager{
     }
     
     private func mocData(){
-
+        
     }
     
     func addGameBoard(){
@@ -44,7 +44,7 @@ class DataManager{
             modelContext.delete(n)
         }
     }
-
-   
+  
+    
 }
 
